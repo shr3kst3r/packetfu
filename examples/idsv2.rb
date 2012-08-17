@@ -1,4 +1,6 @@
-require 'packetfu' # Line 0, require PacketFu for an IDS in 6 lines or less!
+#!/usr/bin/env ruby
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
+
 cap = PacketFu::Capture.new(:iface => ARGV[0], :start => true, :filter => "ip") # Line 1, set up the capture object.
 attack_patterns = ["^gotcha", "owned!*$", "^\x04[^\x00]{50}"] # Line 2, define your attack patterns.
 loop {cap.stream.each {|pkt| packet = PacketFu::Packet.parse(pkt) # Line 3, loop the capture forever, parsing packets.

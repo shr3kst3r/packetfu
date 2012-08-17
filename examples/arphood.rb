@@ -1,9 +1,7 @@
 #!/usr/bin/env ruby
-
 # A simple local network fingerprinter. Uses the OUI list.
 
-require 'examples'
-require 'packetfu'
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
 require 'open-uri'
 
 $oui_prefixes = {}

@@ -1,11 +1,11 @@
+#!/usr/bin/env ruby
 # This is a somewhat contrived and verbose demonstration of how to implement ARP manually.
 #
 # It's contrived because this is really how PacketFu::Utils got born; something similiar
 # (and a wee bit cleaner) is already available as Packet::Utils::arp, since knowing the
 # MAC address of a target IP turns out to be pretty useful day-to-day.
 
-require 'examples' # For path setting slight-of-hand
-require 'packetfu'
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
 
 def usage
 	if ARGV[0].nil?

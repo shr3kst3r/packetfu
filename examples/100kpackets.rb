@@ -1,11 +1,10 @@
 #!/usr/bin/env ruby
-
 # Used mainly to test for memory leaks and to demo the preferred ways of
 # reading and writing packets to and from pcap files.
-require './examples' # For path setting slight-of-hand
-require 'packetfu'
 
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
 include PacketFu
+
 puts "Generating packets... (#{Time.now.utc})"
 
 File.unlink("/tmp/out.pcap") if File.exists? "/tmp/out.pcap"
@@ -36,6 +35,3 @@ read_packets_start = Time.now.utc
 puts "Reading packets..."
 packet_bytes = PcapFile.read_packets "/tmp/out.pcap"
 puts "Read #{packet_bytes.size} parsed packets in #{Time.now.utc - read_packets_start} seconds."
-
-
-

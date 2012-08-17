@@ -1,5 +1,5 @@
-$:.unshift(File.expand_path(File.dirname(__FILE__) + "/../lib/"))
-require 'packetfu'
+#!/usr/bin/env ruby
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
 
 # ifconfig for Darwin
 iface = ARGV[0] || 'en1'

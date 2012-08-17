@@ -1,6 +1,5 @@
-
-require 'examples' # For path setting slight-of-hand
-require 'packetfu'
+#!/usr/bin/env ruby
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
 
 eth_pkt = PacketFu::EthPacket.new
 eth_pkt.eth_saddr="01:02:03:04:05:06"

@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 # new-simple-stats.rb demonstrates the performance difference
 # between the old and busted way to parse pcap files and the
 # new hotness of stream parsing. Spoiler alert: Against a pcap
@@ -8,8 +7,7 @@
 # every 11 seconds (my own benchmark) for this script, at least
 # it doesn't hog up all your memory.
 
-require 'examples' # For path setting slight-of-hand
-require 'packetfu'
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
 
 def print_results(stats)
 	stats.each_pair { |k,v| puts "%-12s: %10d" % [k,v] }

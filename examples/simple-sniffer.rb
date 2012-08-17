@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
-require 'examples'
-require 'packetfu'
+
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
+include PacketFu
 
 puts "Simple sniffer for PacketFu #{PacketFu.version}"
-include PacketFu
 iface = ARGV[0] || "eth0"
 
 def sniff(iface)

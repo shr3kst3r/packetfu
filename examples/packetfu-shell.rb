@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # == Synopsis
 #
 # packetfu-shell.rb is intended for IRB consumption, and providing an
@@ -43,9 +44,7 @@
 #  72 20 62 69 74 73 2e                              r bits.
 #  => nil
 
-$: << File.expand_path(File.dirname(__FILE__) + "/../lib/")
-require 'examples'
-require 'packetfu'
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
 
 module PacketFu
 	def whoami?(args={})
@@ -111,3 +110,7 @@ rescue RuntimeError
 end
 
 banner
+
+require 'irb'
+ARGV.clear
+IRB.start

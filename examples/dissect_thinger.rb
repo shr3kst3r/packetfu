@@ -2,10 +2,11 @@
 # This just allows you to eyeball the dissection stuff to make sure it's all right.
 # Some day, there will be a proper test for it.
 
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
+
 fname = ARGV[0] || "../test/sample.pcap"
 sleep_interval = ARGV[1] || 1
 
-require File.join("..","lib","packetfu")
 puts "Loaded: PacketFu v#{PacketFu.version}"
 # $: << File.join(File.expand_path(File.dirname(__FILE__)),"..","lib")
 

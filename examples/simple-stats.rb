@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 # Simple-stats.rb takes a pcap file, and gives some simple 
 # stastics on the protocols found. It's mainly used to
 # demonstrate a method to parse pcap files.
@@ -9,8 +8,7 @@
 # See new-simple-stats.rb for an example of the streaming
 # parsing method.
 
-require 'examples' # For path setting slight-of-hand
-require 'packetfu'
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
 
 # Takes a file name, parses the packets, and records the packet
 # type based on its PacketFu class.

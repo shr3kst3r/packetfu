@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-require 'packetfu'
 # Portscanning!
 # Run this on one machine
 #cap = Capture.new(:iface=>'wlan0') # or whatever your interface is
@@ -8,6 +7,9 @@ require 'packetfu'
 #cap = Capture.new(:iface=>'wlan0') # or whatever your interface is
 #cap = Capture.new(:iface=>'wlan0') # or whatever your interface is
 # Run this on the third
+
+require File.join(File.expand_path(File.dirname(__FILE__)), "..", "lib", "packetfu")
+
 def do_scan
 	puts "Generating packets..."
 	pkt_array = gen_packets.sort_by {rand}
